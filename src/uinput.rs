@@ -246,7 +246,7 @@ impl VirtualDevice {
     ///
     /// The syspath returned is the one of the input node itself (e.g.
     /// `/sys/devices/virtual/input/input123`), not the syspath of the device node.
-    pub fn get_syspath(&mut self) -> io::Result<PathBuf> {
+    pub fn get_syspath(&self) -> io::Result<PathBuf> {
         let mut bytes = vec![0u8; 256];
         unsafe { sys::ui_get_sysname(self.file.as_raw_fd(), &mut bytes)? };
 
