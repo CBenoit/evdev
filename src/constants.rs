@@ -55,7 +55,7 @@ impl EventType {
 }
 
 /// A "synchronization" message type published by the kernel into the events stream.
-#[derive(Copy, Clone, PartialEq, Eq)]
+#[derive(Copy, Clone, PartialEq, Eq, Hash)]
 pub struct Synchronization(pub u16);
 
 evdev_enum!(
@@ -99,7 +99,7 @@ impl PropType {
 }
 
 /// A type of relative axis measurement, typically produced by mice.
-#[derive(Copy, Clone, PartialEq, Eq)]
+#[derive(Copy, Clone, PartialEq, Eq, Hash)]
 pub struct RelativeAxisType(pub u16);
 
 evdev_enum!(
@@ -125,7 +125,7 @@ impl RelativeAxisType {
 }
 
 /// A type of absolute axis measurement, typically used for touch events and joysticks.
-#[derive(Copy, Clone, PartialEq, Eq)]
+#[derive(Copy, Clone, PartialEq, Eq, Hash)]
 pub struct AbsoluteAxisType(pub u16);
 
 evdev_enum!(
@@ -194,7 +194,7 @@ impl AbsoluteAxisType {
 }
 
 /// An event type corresponding to a physical or virtual switch.
-#[derive(Copy, Clone, PartialEq, Eq)]
+#[derive(Copy, Clone, PartialEq, Eq, Hash)]
 pub struct SwitchType(pub u16);
 
 evdev_enum!(
@@ -241,7 +241,7 @@ impl SwitchType {
 }
 
 /// LEDs specified by USB HID.
-#[derive(Copy, Clone, PartialEq, Eq)]
+#[derive(Copy, Clone, PartialEq, Eq, Hash)]
 pub struct LedType(pub u16);
 
 evdev_enum!(
@@ -269,7 +269,7 @@ impl LedType {
 }
 
 /// Various miscellaneous event types.
-#[derive(Copy, Clone, PartialEq, Eq)]
+#[derive(Copy, Clone, PartialEq, Eq, Hash)]
 pub struct MiscType(pub u16);
 
 evdev_enum!(
@@ -365,7 +365,7 @@ impl FFStatus {
 // }
 
 /// A type associated with simple sounds, such as beeps or tones.
-#[derive(Copy, Clone, PartialEq, Eq)]
+#[derive(Copy, Clone, PartialEq, Eq, Hash)]
 pub struct SoundType(pub u16);
 
 evdev_enum!(

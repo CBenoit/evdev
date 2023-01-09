@@ -134,7 +134,7 @@ const EVENT_BATCH_SIZE: usize = 32;
 /// A convenience mapping from an event `(type, code)` to an enumeration.
 ///
 /// Note that this does not capture an event's value, just the type and code.
-#[derive(Debug, Copy, Clone, PartialEq, Eq)]
+#[derive(Debug, Copy, Clone, PartialEq, Eq, Hash)]
 #[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
 #[cfg_attr(feature = "serde", serde(crate = "serde_1"))]
 pub enum InputEventKind {
